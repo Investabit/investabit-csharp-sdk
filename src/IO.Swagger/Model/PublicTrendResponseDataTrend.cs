@@ -38,13 +38,33 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PublicTrendResponseDataTrend" /> class.
         /// </summary>
+        /// <param name="timeStart">timeStart (required).</param>
+        /// <param name="timeEnd">timeEnd (required).</param>
         /// <param name="interval">interval (required).</param>
         /// <param name="weightedPrice">weightedPrice (required).</param>
         /// <param name="changeUsd">changeUsd (required).</param>
         /// <param name="changePct">changePct (required).</param>
         /// <param name="confidence">confidence (required).</param>
-        public PublicTrendResponseDataTrend(string interval = default(string), decimal? weightedPrice = default(decimal?), decimal? changeUsd = default(decimal?), decimal? changePct = default(decimal?), decimal? confidence = default(decimal?))
+        public PublicTrendResponseDataTrend(decimal? timeStart = default(decimal?), decimal? timeEnd = default(decimal?), string interval = default(string), decimal? weightedPrice = default(decimal?), decimal? changeUsd = default(decimal?), decimal? changePct = default(decimal?), decimal? confidence = default(decimal?))
         {
+            // to ensure "timeStart" is required (not null)
+            if (timeStart == null)
+            {
+                throw new InvalidDataException("timeStart is a required property for PublicTrendResponseDataTrend and cannot be null");
+            }
+            else
+            {
+                this.TimeStart = timeStart;
+            }
+            // to ensure "timeEnd" is required (not null)
+            if (timeEnd == null)
+            {
+                throw new InvalidDataException("timeEnd is a required property for PublicTrendResponseDataTrend and cannot be null");
+            }
+            else
+            {
+                this.TimeEnd = timeEnd;
+            }
             // to ensure "interval" is required (not null)
             if (interval == null)
             {
@@ -93,6 +113,18 @@ namespace IO.Swagger.Model
         }
         
         /// <summary>
+        /// Gets or Sets TimeStart
+        /// </summary>
+        [DataMember(Name="time_start", EmitDefaultValue=false)]
+        public decimal? TimeStart { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TimeEnd
+        /// </summary>
+        [DataMember(Name="time_end", EmitDefaultValue=false)]
+        public decimal? TimeEnd { get; set; }
+
+        /// <summary>
         /// Gets or Sets Interval
         /// </summary>
         [DataMember(Name="interval", EmitDefaultValue=false)]
@@ -130,6 +162,8 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PublicTrendResponseDataTrend {\n");
+            sb.Append("  TimeStart: ").Append(TimeStart).Append("\n");
+            sb.Append("  TimeEnd: ").Append(TimeEnd).Append("\n");
             sb.Append("  Interval: ").Append(Interval).Append("\n");
             sb.Append("  WeightedPrice: ").Append(WeightedPrice).Append("\n");
             sb.Append("  ChangeUsd: ").Append(ChangeUsd).Append("\n");
@@ -170,6 +204,16 @@ namespace IO.Swagger.Model
 
             return 
                 (
+                    this.TimeStart == input.TimeStart ||
+                    (this.TimeStart != null &&
+                    this.TimeStart.Equals(input.TimeStart))
+                ) && 
+                (
+                    this.TimeEnd == input.TimeEnd ||
+                    (this.TimeEnd != null &&
+                    this.TimeEnd.Equals(input.TimeEnd))
+                ) && 
+                (
                     this.Interval == input.Interval ||
                     (this.Interval != null &&
                     this.Interval.Equals(input.Interval))
@@ -205,6 +249,10 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.TimeStart != null)
+                    hashCode = hashCode * 59 + this.TimeStart.GetHashCode();
+                if (this.TimeEnd != null)
+                    hashCode = hashCode * 59 + this.TimeEnd.GetHashCode();
                 if (this.Interval != null)
                     hashCode = hashCode * 59 + this.Interval.GetHashCode();
                 if (this.WeightedPrice != null)

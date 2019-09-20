@@ -25,27 +25,6 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Current
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
-        /// <returns>PublicCurrentResponse</returns>
-        PublicCurrentResponse V1PublicCurrentSymbolGet (string symbol);
-
-        /// <summary>
-        /// Current
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
-        /// <returns>ApiResponse of PublicCurrentResponse</returns>
-        ApiResponse<PublicCurrentResponse> V1PublicCurrentSymbolGetWithHttpInfo (string symbol);
-        /// <summary>
         /// Price Change
         /// </summary>
         /// <remarks>
@@ -66,6 +45,27 @@ namespace IO.Swagger.Api
         /// <param name="symbol">The cryptocurrency symbol.</param>
         /// <returns>ApiResponse of PublicPriceChangeResponse</returns>
         ApiResponse<PublicPriceChangeResponse> V1PublicPriceChangeSymbolGetWithHttpInfo (string symbol);
+        /// <summary>
+        /// Price Current
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
+        /// <returns>PublicPriceCurrentResponse</returns>
+        PublicPriceCurrentResponse V1PublicPriceCurrentSymbolGet (string symbol);
+
+        /// <summary>
+        /// Price Current
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
+        /// <returns>ApiResponse of PublicPriceCurrentResponse</returns>
+        ApiResponse<PublicPriceCurrentResponse> V1PublicPriceCurrentSymbolGetWithHttpInfo (string symbol);
         /// <summary>
         /// Price History
         /// </summary>
@@ -134,27 +134,6 @@ namespace IO.Swagger.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Current
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
-        /// <returns>Task of PublicCurrentResponse</returns>
-        System.Threading.Tasks.Task<PublicCurrentResponse> V1PublicCurrentSymbolGetAsync (string symbol);
-
-        /// <summary>
-        /// Current
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
-        /// <returns>Task of ApiResponse (PublicCurrentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PublicCurrentResponse>> V1PublicCurrentSymbolGetAsyncWithHttpInfo (string symbol);
-        /// <summary>
         /// Price Change
         /// </summary>
         /// <remarks>
@@ -175,6 +154,27 @@ namespace IO.Swagger.Api
         /// <param name="symbol">The cryptocurrency symbol.</param>
         /// <returns>Task of ApiResponse (PublicPriceChangeResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PublicPriceChangeResponse>> V1PublicPriceChangeSymbolGetAsyncWithHttpInfo (string symbol);
+        /// <summary>
+        /// Price Current
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
+        /// <returns>Task of PublicPriceCurrentResponse</returns>
+        System.Threading.Tasks.Task<PublicPriceCurrentResponse> V1PublicPriceCurrentSymbolGetAsync (string symbol);
+
+        /// <summary>
+        /// Price Current
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
+        /// <returns>Task of ApiResponse (PublicPriceCurrentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PublicPriceCurrentResponse>> V1PublicPriceCurrentSymbolGetAsyncWithHttpInfo (string symbol);
         /// <summary>
         /// Price History
         /// </summary>
@@ -341,139 +341,6 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Current 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
-        /// <returns>PublicCurrentResponse</returns>
-        public PublicCurrentResponse V1PublicCurrentSymbolGet (string symbol)
-        {
-             ApiResponse<PublicCurrentResponse> localVarResponse = V1PublicCurrentSymbolGetWithHttpInfo(symbol);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Current 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
-        /// <returns>ApiResponse of PublicCurrentResponse</returns>
-        public ApiResponse< PublicCurrentResponse > V1PublicCurrentSymbolGetWithHttpInfo (string symbol)
-        {
-            // verify the required parameter 'symbol' is set
-            if (symbol == null)
-                throw new ApiException(400, "Missing required parameter 'symbol' when calling PublicApi->V1PublicCurrentSymbolGet");
-
-            var localVarPath = "/v1/public/current/{symbol}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (symbol != null) localVarPathParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1PublicCurrentSymbolGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<PublicCurrentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PublicCurrentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicCurrentResponse)));
-        }
-
-        /// <summary>
-        /// Current 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
-        /// <returns>Task of PublicCurrentResponse</returns>
-        public async System.Threading.Tasks.Task<PublicCurrentResponse> V1PublicCurrentSymbolGetAsync (string symbol)
-        {
-             ApiResponse<PublicCurrentResponse> localVarResponse = await V1PublicCurrentSymbolGetAsyncWithHttpInfo(symbol);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Current 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
-        /// <returns>Task of ApiResponse (PublicCurrentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PublicCurrentResponse>> V1PublicCurrentSymbolGetAsyncWithHttpInfo (string symbol)
-        {
-            // verify the required parameter 'symbol' is set
-            if (symbol == null)
-                throw new ApiException(400, "Missing required parameter 'symbol' when calling PublicApi->V1PublicCurrentSymbolGet");
-
-            var localVarPath = "/v1/public/current/{symbol}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (symbol != null) localVarPathParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1PublicCurrentSymbolGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<PublicCurrentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PublicCurrentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicCurrentResponse)));
-        }
-
-        /// <summary>
         /// Price Change 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -604,6 +471,139 @@ namespace IO.Swagger.Api
             return new ApiResponse<PublicPriceChangeResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (PublicPriceChangeResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicPriceChangeResponse)));
+        }
+
+        /// <summary>
+        /// Price Current 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
+        /// <returns>PublicPriceCurrentResponse</returns>
+        public PublicPriceCurrentResponse V1PublicPriceCurrentSymbolGet (string symbol)
+        {
+             ApiResponse<PublicPriceCurrentResponse> localVarResponse = V1PublicPriceCurrentSymbolGetWithHttpInfo(symbol);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Price Current 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
+        /// <returns>ApiResponse of PublicPriceCurrentResponse</returns>
+        public ApiResponse< PublicPriceCurrentResponse > V1PublicPriceCurrentSymbolGetWithHttpInfo (string symbol)
+        {
+            // verify the required parameter 'symbol' is set
+            if (symbol == null)
+                throw new ApiException(400, "Missing required parameter 'symbol' when calling PublicApi->V1PublicPriceCurrentSymbolGet");
+
+            var localVarPath = "/v1/public/price-current/{symbol}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (symbol != null) localVarPathParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1PublicPriceCurrentSymbolGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicPriceCurrentResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicPriceCurrentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicPriceCurrentResponse)));
+        }
+
+        /// <summary>
+        /// Price Current 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
+        /// <returns>Task of PublicPriceCurrentResponse</returns>
+        public async System.Threading.Tasks.Task<PublicPriceCurrentResponse> V1PublicPriceCurrentSymbolGetAsync (string symbol)
+        {
+             ApiResponse<PublicPriceCurrentResponse> localVarResponse = await V1PublicPriceCurrentSymbolGetAsyncWithHttpInfo(symbol);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Price Current 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol.</param>
+        /// <returns>Task of ApiResponse (PublicPriceCurrentResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PublicPriceCurrentResponse>> V1PublicPriceCurrentSymbolGetAsyncWithHttpInfo (string symbol)
+        {
+            // verify the required parameter 'symbol' is set
+            if (symbol == null)
+                throw new ApiException(400, "Missing required parameter 'symbol' when calling PublicApi->V1PublicPriceCurrentSymbolGet");
+
+            var localVarPath = "/v1/public/price-current/{symbol}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (symbol != null) localVarPathParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1PublicPriceCurrentSymbolGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicPriceCurrentResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicPriceCurrentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicPriceCurrentResponse)));
         }
 
         /// <summary>

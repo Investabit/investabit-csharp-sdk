@@ -25,30 +25,30 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// PublicCurrentResponse
+    /// PublicPriceCurrentResponse
     /// </summary>
     [DataContract]
-    public partial class PublicCurrentResponse :  IEquatable<PublicCurrentResponse>, IValidatableObject
+    public partial class PublicPriceCurrentResponse :  IEquatable<PublicPriceCurrentResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCurrentResponse" /> class.
+        /// Initializes a new instance of the <see cref="PublicPriceCurrentResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected PublicCurrentResponse() { }
+        protected PublicPriceCurrentResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCurrentResponse" /> class.
+        /// Initializes a new instance of the <see cref="PublicPriceCurrentResponse" /> class.
         /// </summary>
         /// <param name="success">success (required).</param>
         /// <param name="code">code (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="data">data (required).</param>
         /// <param name="errors">errors.</param>
-        public PublicCurrentResponse(bool? success = default(bool?), int? code = default(int?), string status = default(string), PublicCurrentResponseData data = default(PublicCurrentResponseData), List<Object> errors = default(List<Object>))
+        public PublicPriceCurrentResponse(bool? success = default(bool?), int? code = default(int?), string status = default(string), PublicPriceCurrentResponseData data = default(PublicPriceCurrentResponseData), List<Object> errors = default(List<Object>))
         {
             // to ensure "success" is required (not null)
             if (success == null)
             {
-                throw new InvalidDataException("success is a required property for PublicCurrentResponse and cannot be null");
+                throw new InvalidDataException("success is a required property for PublicPriceCurrentResponse and cannot be null");
             }
             else
             {
@@ -57,7 +57,7 @@ namespace IO.Swagger.Model
             // to ensure "code" is required (not null)
             if (code == null)
             {
-                throw new InvalidDataException("code is a required property for PublicCurrentResponse and cannot be null");
+                throw new InvalidDataException("code is a required property for PublicPriceCurrentResponse and cannot be null");
             }
             else
             {
@@ -66,7 +66,7 @@ namespace IO.Swagger.Model
             // to ensure "status" is required (not null)
             if (status == null)
             {
-                throw new InvalidDataException("status is a required property for PublicCurrentResponse and cannot be null");
+                throw new InvalidDataException("status is a required property for PublicPriceCurrentResponse and cannot be null");
             }
             else
             {
@@ -75,7 +75,7 @@ namespace IO.Swagger.Model
             // to ensure "data" is required (not null)
             if (data == null)
             {
-                throw new InvalidDataException("data is a required property for PublicCurrentResponse and cannot be null");
+                throw new InvalidDataException("data is a required property for PublicPriceCurrentResponse and cannot be null");
             }
             else
             {
@@ -106,7 +106,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data", EmitDefaultValue=false)]
-        public PublicCurrentResponseData Data { get; set; }
+        public PublicPriceCurrentResponseData Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Errors
@@ -121,7 +121,7 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PublicCurrentResponse {\n");
+            sb.Append("class PublicPriceCurrentResponse {\n");
             sb.Append("  Success: ").Append(Success).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -147,15 +147,15 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PublicCurrentResponse);
+            return this.Equals(input as PublicPriceCurrentResponse);
         }
 
         /// <summary>
-        /// Returns true if PublicCurrentResponse instances are equal
+        /// Returns true if PublicPriceCurrentResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of PublicCurrentResponse to be compared</param>
+        /// <param name="input">Instance of PublicPriceCurrentResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PublicCurrentResponse input)
+        public bool Equals(PublicPriceCurrentResponse input)
         {
             if (input == null)
                 return false;

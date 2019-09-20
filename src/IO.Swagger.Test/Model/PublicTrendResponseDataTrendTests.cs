@@ -67,6 +67,22 @@ namespace IO.Swagger.Test
 
 
         /// <summary>
+        /// Test the property 'TimeStart'
+        /// </summary>
+        [Test]
+        public void TimeStartTest()
+        {
+            // TODO unit test for the property 'TimeStart'
+        }
+        /// <summary>
+        /// Test the property 'TimeEnd'
+        /// </summary>
+        [Test]
+        public void TimeEndTest()
+        {
+            // TODO unit test for the property 'TimeEnd'
+        }
+        /// <summary>
         /// Test the property 'Interval'
         /// </summary>
         [Test]

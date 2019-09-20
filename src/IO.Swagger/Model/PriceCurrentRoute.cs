@@ -25,16 +25,16 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// CurrentRoute
+    /// PriceCurrentRoute
     /// </summary>
     [DataContract]
-    public partial class CurrentRoute :  IEquatable<CurrentRoute>, IValidatableObject
+    public partial class PriceCurrentRoute :  IEquatable<PriceCurrentRoute>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CurrentRoute" /> class.
+        /// Initializes a new instance of the <see cref="PriceCurrentRoute" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        public CurrentRoute()
+        public PriceCurrentRoute()
         {
         }
         
@@ -45,7 +45,7 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CurrentRoute {\n");
+            sb.Append("class PriceCurrentRoute {\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,15 +66,15 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CurrentRoute);
+            return this.Equals(input as PriceCurrentRoute);
         }
 
         /// <summary>
-        /// Returns true if CurrentRoute instances are equal
+        /// Returns true if PriceCurrentRoute instances are equal
         /// </summary>
-        /// <param name="input">Instance of CurrentRoute to be compared</param>
+        /// <param name="input">Instance of PriceCurrentRoute to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CurrentRoute input)
+        public bool Equals(PriceCurrentRoute input)
         {
             if (input == null)
                 return false;

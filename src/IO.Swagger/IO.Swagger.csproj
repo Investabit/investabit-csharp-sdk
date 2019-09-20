@@ -12,7 +12,7 @@ The Investabit API allows for access to all of the public facing services provid
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C56AEF4-E50C-4EE7-BCBF-BC015AEAF511}</ProjectGuid>
+    <ProjectGuid>{C7C5B95D-C02B-4E04-A974-6391658F6D28}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IO.Swagger</RootNamespace>

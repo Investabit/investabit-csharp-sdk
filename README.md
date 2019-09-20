@@ -71,17 +71,17 @@ namespace Example
         {
 
             var apiInstance = new PublicApi();
-            var symbol = "btc";  // string | The cryptocurrency symbol, provide `all` to get every symbol.
+            var symbol = btc;  // string | The cryptocurrency symbol.
 
             try
             {
-                // Current
-                PublicCurrentResponse result = apiInstance.V1PublicCurrentSymbolGet(symbol);
+                // Price Change
+                PublicPriceChangeResponse result = apiInstance.V1PublicPriceChangeSymbolGet(symbol);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling PublicApi.V1PublicCurrentSymbolGet: " + e.Message );
+                Debug.Print("Exception when calling PublicApi.V1PublicPriceChangeSymbolGet: " + e.Message );
             }
 
         }
@@ -96,8 +96,8 @@ All URIs are relative to *https://api.investabit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PublicApi* | [**V1PublicCurrentSymbolGet**](docs/PublicApi.md#v1publiccurrentsymbolget) | **GET** /v1/public/current/{symbol} | Current
 *PublicApi* | [**V1PublicPriceChangeSymbolGet**](docs/PublicApi.md#v1publicpricechangesymbolget) | **GET** /v1/public/price-change/{symbol} | Price Change
+*PublicApi* | [**V1PublicPriceCurrentSymbolGet**](docs/PublicApi.md#v1publicpricecurrentsymbolget) | **GET** /v1/public/price-current/{symbol} | Price Current
 *PublicApi* | [**V1PublicPriceHistorySymbolPeriodIntervalGet**](docs/PublicApi.md#v1publicpricehistorysymbolperiodintervalget) | **GET** /v1/public/price-history/{symbol}/{period}/{interval} | Price History
 *PublicApi* | [**V1PublicSymbolsGet**](docs/PublicApi.md#v1publicsymbolsget) | **GET** /v1/public/symbols | Symbols
 *PublicApi* | [**V1PublicTrendSymbolGet**](docs/PublicApi.md#v1publictrendsymbolget) | **GET** /v1/public/trend/{symbol} | Trend
@@ -106,16 +106,16 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
- - [Model.CurrentRoute](docs/CurrentRoute.md)
  - [Model.DefaultResponse](docs/DefaultResponse.md)
  - [Model.PriceChangeRoute](docs/PriceChangeRoute.md)
+ - [Model.PriceCurrentRoute](docs/PriceCurrentRoute.md)
  - [Model.PriceHistoryRoute](docs/PriceHistoryRoute.md)
- - [Model.PublicCurrentResponse](docs/PublicCurrentResponse.md)
- - [Model.PublicCurrentResponseData](docs/PublicCurrentResponseData.md)
- - [Model.PublicCurrentResponseDataCurrent](docs/PublicCurrentResponseDataCurrent.md)
  - [Model.PublicPriceChangeResponse](docs/PublicPriceChangeResponse.md)
  - [Model.PublicPriceChangeResponseData](docs/PublicPriceChangeResponseData.md)
  - [Model.PublicPriceChangeResponseDataPriceChange](docs/PublicPriceChangeResponseDataPriceChange.md)
+ - [Model.PublicPriceCurrentResponse](docs/PublicPriceCurrentResponse.md)
+ - [Model.PublicPriceCurrentResponseData](docs/PublicPriceCurrentResponseData.md)
+ - [Model.PublicPriceCurrentResponseDataCurrent](docs/PublicPriceCurrentResponseDataCurrent.md)
  - [Model.PublicPriceHistoryResponse](docs/PublicPriceHistoryResponse.md)
  - [Model.PublicPriceHistoryResponseData](docs/PublicPriceHistoryResponseData.md)
  - [Model.PublicPriceHistoryResponseDataHistory](docs/PublicPriceHistoryResponseDataHistory.md)

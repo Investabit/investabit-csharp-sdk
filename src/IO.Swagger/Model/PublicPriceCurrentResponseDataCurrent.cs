@@ -25,30 +25,30 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// PublicCurrentResponseDataCurrent
+    /// PublicPriceCurrentResponseDataCurrent
     /// </summary>
     [DataContract]
-    public partial class PublicCurrentResponseDataCurrent :  IEquatable<PublicCurrentResponseDataCurrent>, IValidatableObject
+    public partial class PublicPriceCurrentResponseDataCurrent :  IEquatable<PublicPriceCurrentResponseDataCurrent>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCurrentResponseDataCurrent" /> class.
+        /// Initializes a new instance of the <see cref="PublicPriceCurrentResponseDataCurrent" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected PublicCurrentResponseDataCurrent() { }
+        protected PublicPriceCurrentResponseDataCurrent() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCurrentResponseDataCurrent" /> class.
+        /// Initializes a new instance of the <see cref="PublicPriceCurrentResponseDataCurrent" /> class.
         /// </summary>
         /// <param name="symbol">symbol (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="price">price (required).</param>
         /// <param name="changeUsd">changeUsd (required).</param>
         /// <param name="changePct">changePct (required).</param>
-        public PublicCurrentResponseDataCurrent(string symbol = default(string), string name = default(string), decimal? price = default(decimal?), decimal? changeUsd = default(decimal?), decimal? changePct = default(decimal?))
+        public PublicPriceCurrentResponseDataCurrent(string symbol = default(string), string name = default(string), decimal? price = default(decimal?), decimal? changeUsd = default(decimal?), decimal? changePct = default(decimal?))
         {
             // to ensure "symbol" is required (not null)
             if (symbol == null)
             {
-                throw new InvalidDataException("symbol is a required property for PublicCurrentResponseDataCurrent and cannot be null");
+                throw new InvalidDataException("symbol is a required property for PublicPriceCurrentResponseDataCurrent and cannot be null");
             }
             else
             {
@@ -57,7 +57,7 @@ namespace IO.Swagger.Model
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new InvalidDataException("name is a required property for PublicCurrentResponseDataCurrent and cannot be null");
+                throw new InvalidDataException("name is a required property for PublicPriceCurrentResponseDataCurrent and cannot be null");
             }
             else
             {
@@ -66,7 +66,7 @@ namespace IO.Swagger.Model
             // to ensure "price" is required (not null)
             if (price == null)
             {
-                throw new InvalidDataException("price is a required property for PublicCurrentResponseDataCurrent and cannot be null");
+                throw new InvalidDataException("price is a required property for PublicPriceCurrentResponseDataCurrent and cannot be null");
             }
             else
             {
@@ -75,7 +75,7 @@ namespace IO.Swagger.Model
             // to ensure "changeUsd" is required (not null)
             if (changeUsd == null)
             {
-                throw new InvalidDataException("changeUsd is a required property for PublicCurrentResponseDataCurrent and cannot be null");
+                throw new InvalidDataException("changeUsd is a required property for PublicPriceCurrentResponseDataCurrent and cannot be null");
             }
             else
             {
@@ -84,7 +84,7 @@ namespace IO.Swagger.Model
             // to ensure "changePct" is required (not null)
             if (changePct == null)
             {
-                throw new InvalidDataException("changePct is a required property for PublicCurrentResponseDataCurrent and cannot be null");
+                throw new InvalidDataException("changePct is a required property for PublicPriceCurrentResponseDataCurrent and cannot be null");
             }
             else
             {
@@ -129,7 +129,7 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PublicCurrentResponseDataCurrent {\n");
+            sb.Append("class PublicPriceCurrentResponseDataCurrent {\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
@@ -155,15 +155,15 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PublicCurrentResponseDataCurrent);
+            return this.Equals(input as PublicPriceCurrentResponseDataCurrent);
         }
 
         /// <summary>
-        /// Returns true if PublicCurrentResponseDataCurrent instances are equal
+        /// Returns true if PublicPriceCurrentResponseDataCurrent instances are equal
         /// </summary>
-        /// <param name="input">Instance of PublicCurrentResponseDataCurrent to be compared</param>
+        /// <param name="input">Instance of PublicPriceCurrentResponseDataCurrent to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PublicCurrentResponseDataCurrent input)
+        public bool Equals(PublicPriceCurrentResponseDataCurrent input)
         {
             if (input == null)
                 return false;

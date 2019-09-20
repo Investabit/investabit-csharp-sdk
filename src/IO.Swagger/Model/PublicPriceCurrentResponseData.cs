@@ -25,26 +25,26 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// PublicCurrentResponseData
+    /// PublicPriceCurrentResponseData
     /// </summary>
     [DataContract]
-    public partial class PublicCurrentResponseData :  IEquatable<PublicCurrentResponseData>, IValidatableObject
+    public partial class PublicPriceCurrentResponseData :  IEquatable<PublicPriceCurrentResponseData>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCurrentResponseData" /> class.
+        /// Initializes a new instance of the <see cref="PublicPriceCurrentResponseData" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected PublicCurrentResponseData() { }
+        protected PublicPriceCurrentResponseData() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCurrentResponseData" /> class.
+        /// Initializes a new instance of the <see cref="PublicPriceCurrentResponseData" /> class.
         /// </summary>
         /// <param name="current">current (required).</param>
-        public PublicCurrentResponseData(List<PublicCurrentResponseDataCurrent> current = default(List<PublicCurrentResponseDataCurrent>))
+        public PublicPriceCurrentResponseData(List<PublicPriceCurrentResponseDataCurrent> current = default(List<PublicPriceCurrentResponseDataCurrent>))
         {
             // to ensure "current" is required (not null)
             if (current == null)
             {
-                throw new InvalidDataException("current is a required property for PublicCurrentResponseData and cannot be null");
+                throw new InvalidDataException("current is a required property for PublicPriceCurrentResponseData and cannot be null");
             }
             else
             {
@@ -56,7 +56,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Current
         /// </summary>
         [DataMember(Name="current", EmitDefaultValue=false)]
-        public List<PublicCurrentResponseDataCurrent> Current { get; set; }
+        public List<PublicPriceCurrentResponseDataCurrent> Current { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,7 +65,7 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PublicCurrentResponseData {\n");
+            sb.Append("class PublicPriceCurrentResponseData {\n");
             sb.Append("  Current: ").Append(Current).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -87,15 +87,15 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PublicCurrentResponseData);
+            return this.Equals(input as PublicPriceCurrentResponseData);
         }
 
         /// <summary>
-        /// Returns true if PublicCurrentResponseData instances are equal
+        /// Returns true if PublicPriceCurrentResponseData instances are equal
         /// </summary>
-        /// <param name="input">Instance of PublicCurrentResponseData to be compared</param>
+        /// <param name="input">Instance of PublicPriceCurrentResponseData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PublicCurrentResponseData input)
+        public bool Equals(PublicPriceCurrentResponseData input)
         {
             if (input == null)
                 return false;

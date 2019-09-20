@@ -3,6 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**TimeStart** | **decimal?** |  | 
+**TimeEnd** | **decimal?** |  | 
 **Interval** | **string** |  | 
 **WeightedPrice** | **decimal?** |  | 
 **ChangeUsd** | **decimal?** |  | 

@@ -65,18 +65,6 @@ namespace IO.Swagger.Test
 
         
         /// <summary>
-        /// Test V1PublicCurrentSymbolGet
-        /// </summary>
-        [Test]
-        public void V1PublicCurrentSymbolGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string symbol = null;
-            //var response = instance.V1PublicCurrentSymbolGet(symbol);
-            //Assert.IsInstanceOf<PublicCurrentResponse> (response, "response is PublicCurrentResponse");
-        }
-        
-        /// <summary>
         /// Test V1PublicPriceChangeSymbolGet
         /// </summary>
         [Test]
@@ -86,6 +74,18 @@ namespace IO.Swagger.Test
             //string symbol = null;
             //var response = instance.V1PublicPriceChangeSymbolGet(symbol);
             //Assert.IsInstanceOf<PublicPriceChangeResponse> (response, "response is PublicPriceChangeResponse");
+        }
+        
+        /// <summary>
+        /// Test V1PublicPriceCurrentSymbolGet
+        /// </summary>
+        [Test]
+        public void V1PublicPriceCurrentSymbolGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string symbol = null;
+            //var response = instance.V1PublicPriceCurrentSymbolGet(symbol);
+            //Assert.IsInstanceOf<PublicPriceCurrentResponse> (response, "response is PublicPriceCurrentResponse");
         }
         
         /// <summary>
