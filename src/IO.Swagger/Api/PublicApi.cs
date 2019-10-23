@@ -131,6 +131,27 @@ namespace IO.Swagger.Api
         /// <param name="symbol">The cryptocurrency symbol.</param>
         /// <returns>ApiResponse of PublicTrendResponse</returns>
         ApiResponse<PublicTrendResponse> V1PublicTrendSymbolGetWithHttpInfo (string symbol);
+        /// <summary>
+        /// Waiting List
+        /// </summary>
+        /// <remarks>
+        /// Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>DefaultResponse</returns>
+        DefaultResponse V1PublicWaitingListPost (PublicWaitingListRequest body = null);
+
+        /// <summary>
+        /// Waiting List
+        /// </summary>
+        /// <remarks>
+        /// Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of DefaultResponse</returns>
+        ApiResponse<DefaultResponse> V1PublicWaitingListPostWithHttpInfo (PublicWaitingListRequest body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -240,6 +261,27 @@ namespace IO.Swagger.Api
         /// <param name="symbol">The cryptocurrency symbol.</param>
         /// <returns>Task of ApiResponse (PublicTrendResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PublicTrendResponse>> V1PublicTrendSymbolGetAsyncWithHttpInfo (string symbol);
+        /// <summary>
+        /// Waiting List
+        /// </summary>
+        /// <remarks>
+        /// Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of DefaultResponse</returns>
+        System.Threading.Tasks.Task<DefaultResponse> V1PublicWaitingListPostAsync (PublicWaitingListRequest body = null);
+
+        /// <summary>
+        /// Waiting List
+        /// </summary>
+        /// <remarks>
+        /// Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (DefaultResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DefaultResponse>> V1PublicWaitingListPostAsyncWithHttpInfo (PublicWaitingListRequest body = null);
         #endregion Asynchronous Operations
     }
 
@@ -1015,6 +1057,147 @@ namespace IO.Swagger.Api
             return new ApiResponse<PublicTrendResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (PublicTrendResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicTrendResponse)));
+        }
+
+        /// <summary>
+        /// Waiting List Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>DefaultResponse</returns>
+        public DefaultResponse V1PublicWaitingListPost (PublicWaitingListRequest body = null)
+        {
+             ApiResponse<DefaultResponse> localVarResponse = V1PublicWaitingListPostWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Waiting List Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of DefaultResponse</returns>
+        public ApiResponse< DefaultResponse > V1PublicWaitingListPostWithHttpInfo (PublicWaitingListRequest body = null)
+        {
+
+            var localVarPath = "/v1/public/waiting-list";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1PublicWaitingListPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DefaultResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DefaultResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DefaultResponse)));
+        }
+
+        /// <summary>
+        /// Waiting List Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of DefaultResponse</returns>
+        public async System.Threading.Tasks.Task<DefaultResponse> V1PublicWaitingListPostAsync (PublicWaitingListRequest body = null)
+        {
+             ApiResponse<DefaultResponse> localVarResponse = await V1PublicWaitingListPostAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Waiting List Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (DefaultResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DefaultResponse>> V1PublicWaitingListPostAsyncWithHttpInfo (PublicWaitingListRequest body = null)
+        {
+
+            var localVarPath = "/v1/public/waiting-list";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1PublicWaitingListPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DefaultResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DefaultResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DefaultResponse)));
         }
 
     }

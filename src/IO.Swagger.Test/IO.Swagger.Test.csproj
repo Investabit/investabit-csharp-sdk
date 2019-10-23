@@ -81,7 +81,7 @@ The Investabit API allows for access to all of the public facing services provid
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\IO.Swagger\IO.Swagger.csproj">
-          <Project>{C7C5B95D-C02B-4E04-A974-6391658F6D28}</Project>
+          <Project>{669F940D-0267-4F61-8ECA-39FB3BEFCB50}</Project>
           <Name>IO.Swagger</Name>
       </ProjectReference>
   </ItemGroup>

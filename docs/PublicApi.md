@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**V1PublicPriceHistorySymbolPeriodIntervalGet**](PublicApi.md#v1publicpricehistorysymbolperiodintervalget) | **GET** /v1/public/price-history/{symbol}/{period}/{interval} | Price History
 [**V1PublicSymbolsGet**](PublicApi.md#v1publicsymbolsget) | **GET** /v1/public/symbols | Symbols
 [**V1PublicTrendSymbolGet**](PublicApi.md#v1publictrendsymbolget) | **GET** /v1/public/trend/{symbol} | Trend
+[**V1PublicWaitingListPost**](PublicApi.md#v1publicwaitinglistpost) | **POST** /v1/public/waiting-list | Waiting List
 
 
 <a name="v1publicpricechangesymbolget"></a>
@@ -294,6 +295,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PublicTrendResponse**](PublicTrendResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="v1publicwaitinglistpost"></a>
+# **V1PublicWaitingListPost**
+> DefaultResponse V1PublicWaitingListPost (PublicWaitingListRequest body = null)
+
+Waiting List
+
+Subscribe a user to the waiting list, `name` is not required.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class V1PublicWaitingListPostExample
+    {
+        public void main()
+        {
+            var apiInstance = new PublicApi();
+            var body = new PublicWaitingListRequest(); // PublicWaitingListRequest |  (optional) 
+
+            try
+            {
+                // Waiting List
+                DefaultResponse result = apiInstance.V1PublicWaitingListPost(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PublicApi.V1PublicWaitingListPost: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PublicWaitingListRequest**](PublicWaitingListRequest.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
 
 ### Authorization
 

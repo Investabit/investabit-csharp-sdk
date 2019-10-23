@@ -125,6 +125,18 @@ namespace IO.Swagger.Test
             //Assert.IsInstanceOf<PublicTrendResponse> (response, "response is PublicTrendResponse");
         }
         
+        /// <summary>
+        /// Test V1PublicWaitingListPost
+        /// </summary>
+        [Test]
+        public void V1PublicWaitingListPostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //PublicWaitingListRequest body = null;
+            //var response = instance.V1PublicWaitingListPost(body);
+            //Assert.IsInstanceOf<DefaultResponse> (response, "response is DefaultResponse");
+        }
+        
     }
 
 }
