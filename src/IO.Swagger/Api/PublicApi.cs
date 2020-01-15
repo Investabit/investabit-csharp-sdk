@@ -1,7 +1,7 @@
 /* 
- * Investabit
+ * CryptoWeather
  *
- * The Investabit API allows for access to all of the public facing services provided, including market data and forecasts.  ## General Overview  1. All API methods will be built to adhere to RESTful best practices as closely as possible. As such, all API calls will be made via the standard HTTP protocol using the GET/POST/PUT/DELETE request types.  2. Every request returns the status as a JSON response with the following   - success, true if it was successful   - code, the http status code (also in the response header)          200 if response is successful          400 if bad request          401 if authorization JWT is wrong or limit exceeded          404 wrong route          500 for any internal errors  - status, the status of the request, default **success**  - errors, an array of any relevant error details  3. For any requests that are not successful an error message is specified and returned as an array for the **errors** key in the JSON response.  4. All authentication uses JSON Web Tokens (JWT), which is set as the **Authorization** entry in the header, see the following for more details.     * http://jwt.io     * https://scotch.io/tutorials/the-anatomy-of-a-json-web-token
+ * The CryptoWeather API allows for access to all of the cryptocurrency data and market forecast services provided. There are two primary categories of routes, `public` and `private`, where `public` routes are accessible to the general public and do not require API authentication, and `private` routes, which require API authentication.  ## General Overview  1. All API methods adhere to RESTful best practices as closely as possible. As such, all API calls will be made via the standard HTTP protocol using the GET/POST/PUT/DELETE request types.  2. Every request returns the status as a JSON response with the following:     - success, true if it was successful     - code, the http status code (also in the response header)         - 200 if response is successful         - 400 if bad request         - 401 if authorization JWT is wrong or limit exceeded         - 404 wrong route         - 500 for any internal errors     - status, the status of the request, default **success**     - errors, an array of any relevant error details  3. For any requests that are not successful an error message is specified and returned as an array for the **errors** key in the JSON response.  4. All authentication uses JSON Web Tokens (JWT), which is set as the **Authorization** entry in the header, see the following for more details.     - http://jwt.io     - https://scotch.io/tutorials/the-anatomy-of-a-json-web-token  ## Code Example  The following is a code example in Python, which demonstrates using the [Python Requests library](https://requests.readthedocs.io/en/master/) for both the `public` and `private` API routes.  ``` import requests  HOST = \"https://api.cryptoweather.ai/v1\"  # Your API key (JWT) API_KEY = \"<YOUR API KEY>\"  # Example public request, no API key required. requests.get(\"{}/public/symbols\".format(HOST)).json()  # Get the current btc price using the public route requests.get(\"{}/public/price-current/{}\".format(HOST, \"btc\")).json()   # Example private request, API key required. Get the btc hourly forecasts headers = {\"Authorization\": \"Bearer {}\".format(API_KEY)} requests.get(\"{}/private/forecast/{}/{}\".format(HOST, \"btc\", \"1h\"),              headers=headers).json() ```
  *
  * 
  * 
@@ -114,7 +114,7 @@ namespace IO.Swagger.Api
         /// Trend
         /// </summary>
         /// <remarks>
-        /// 
+        /// The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The cryptocurrency symbol.</param>
@@ -125,33 +125,12 @@ namespace IO.Swagger.Api
         /// Trend
         /// </summary>
         /// <remarks>
-        /// 
+        /// The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The cryptocurrency symbol.</param>
         /// <returns>ApiResponse of PublicTrendResponse</returns>
         ApiResponse<PublicTrendResponse> V1PublicTrendSymbolGetWithHttpInfo (string symbol);
-        /// <summary>
-        /// Waiting List
-        /// </summary>
-        /// <remarks>
-        /// Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>DefaultResponse</returns>
-        DefaultResponse V1PublicWaitingListPost (PublicWaitingListRequest body = null);
-
-        /// <summary>
-        /// Waiting List
-        /// </summary>
-        /// <remarks>
-        /// Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of DefaultResponse</returns>
-        ApiResponse<DefaultResponse> V1PublicWaitingListPostWithHttpInfo (PublicWaitingListRequest body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -244,7 +223,7 @@ namespace IO.Swagger.Api
         /// Trend
         /// </summary>
         /// <remarks>
-        /// 
+        /// The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The cryptocurrency symbol.</param>
@@ -255,33 +234,12 @@ namespace IO.Swagger.Api
         /// Trend
         /// </summary>
         /// <remarks>
-        /// 
+        /// The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The cryptocurrency symbol.</param>
         /// <returns>Task of ApiResponse (PublicTrendResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PublicTrendResponse>> V1PublicTrendSymbolGetAsyncWithHttpInfo (string symbol);
-        /// <summary>
-        /// Waiting List
-        /// </summary>
-        /// <remarks>
-        /// Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of DefaultResponse</returns>
-        System.Threading.Tasks.Task<DefaultResponse> V1PublicWaitingListPostAsync (PublicWaitingListRequest body = null);
-
-        /// <summary>
-        /// Waiting List
-        /// </summary>
-        /// <remarks>
-        /// Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (DefaultResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DefaultResponse>> V1PublicWaitingListPostAsyncWithHttpInfo (PublicWaitingListRequest body = null);
         #endregion Asynchronous Operations
     }
 
@@ -927,7 +885,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Trend 
+        /// Trend The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The cryptocurrency symbol.</param>
@@ -939,7 +897,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Trend 
+        /// Trend The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The cryptocurrency symbol.</param>
@@ -993,7 +951,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Trend 
+        /// Trend The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The cryptocurrency symbol.</param>
@@ -1006,7 +964,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Trend 
+        /// Trend The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The cryptocurrency symbol.</param>
@@ -1057,147 +1015,6 @@ namespace IO.Swagger.Api
             return new ApiResponse<PublicTrendResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (PublicTrendResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicTrendResponse)));
-        }
-
-        /// <summary>
-        /// Waiting List Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>DefaultResponse</returns>
-        public DefaultResponse V1PublicWaitingListPost (PublicWaitingListRequest body = null)
-        {
-             ApiResponse<DefaultResponse> localVarResponse = V1PublicWaitingListPostWithHttpInfo(body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Waiting List Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of DefaultResponse</returns>
-        public ApiResponse< DefaultResponse > V1PublicWaitingListPostWithHttpInfo (PublicWaitingListRequest body = null)
-        {
-
-            var localVarPath = "/v1/public/waiting-list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1PublicWaitingListPost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<DefaultResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DefaultResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DefaultResponse)));
-        }
-
-        /// <summary>
-        /// Waiting List Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of DefaultResponse</returns>
-        public async System.Threading.Tasks.Task<DefaultResponse> V1PublicWaitingListPostAsync (PublicWaitingListRequest body = null)
-        {
-             ApiResponse<DefaultResponse> localVarResponse = await V1PublicWaitingListPostAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Waiting List Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (DefaultResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DefaultResponse>> V1PublicWaitingListPostAsyncWithHttpInfo (PublicWaitingListRequest body = null)
-        {
-
-            var localVarPath = "/v1/public/waiting-list";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1PublicWaitingListPost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<DefaultResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DefaultResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DefaultResponse)));
         }
 
     }

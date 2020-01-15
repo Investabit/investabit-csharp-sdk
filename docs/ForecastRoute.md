@@ -1,4 +1,4 @@
-# IO.Swagger.Model.WaitingListRoute
+# IO.Swagger.Model.ForecastRoute
 ## Properties
 
 Name | Type | Description | Notes
