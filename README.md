@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
 *PublicApi* | [**V1PublicPriceChangeSymbolGet**](docs/PublicApi.md#v1publicpricechangesymbolget) | **GET** /v1/public/price-change/{symbol} | Price Change
 *PublicApi* | [**V1PublicPriceCurrentSymbolGet**](docs/PublicApi.md#v1publicpricecurrentsymbolget) | **GET** /v1/public/price-current/{symbol} | Price Current
 *PublicApi* | [**V1PublicPriceHistorySymbolPeriodIntervalGet**](docs/PublicApi.md#v1publicpricehistorysymbolperiodintervalget) | **GET** /v1/public/price-history/{symbol}/{period}/{interval} | Price History
+*PublicApi* | [**V1PublicSummaryGet**](docs/PublicApi.md#v1publicsummaryget) | **GET** /v1/public/summary | Summary
 *PublicApi* | [**V1PublicSymbolsGet**](docs/PublicApi.md#v1publicsymbolsget) | **GET** /v1/public/symbols | Symbols
 *PublicApi* | [**V1PublicTrendSymbolGet**](docs/PublicApi.md#v1publictrendsymbolget) | **GET** /v1/public/trend/{symbol} | Trend
 
@@ -141,12 +142,16 @@ Class | Method | HTTP request | Description
  - [Model.PublicPriceHistoryResponseData](docs/PublicPriceHistoryResponseData.md)
  - [Model.PublicPriceHistoryResponseDataHistory](docs/PublicPriceHistoryResponseDataHistory.md)
  - [Model.PublicPriceHistoryResponseDataPriceHistory](docs/PublicPriceHistoryResponseDataPriceHistory.md)
+ - [Model.PublicSummaryResponse](docs/PublicSummaryResponse.md)
+ - [Model.PublicSummaryResponseColor](docs/PublicSummaryResponseColor.md)
+ - [Model.PublicSummaryResponseData](docs/PublicSummaryResponseData.md)
  - [Model.PublicSymbolsResponse](docs/PublicSymbolsResponse.md)
  - [Model.PublicSymbolsResponseData](docs/PublicSymbolsResponseData.md)
  - [Model.PublicSymbolsResponseDataSymbols](docs/PublicSymbolsResponseDataSymbols.md)
  - [Model.PublicTrendResponse](docs/PublicTrendResponse.md)
  - [Model.PublicTrendResponseData](docs/PublicTrendResponseData.md)
  - [Model.PublicTrendResponseDataTrend](docs/PublicTrendResponseDataTrend.md)
+ - [Model.SummaryRoute](docs/SummaryRoute.md)
  - [Model.SymbolsRoute](docs/SymbolsRoute.md)
  - [Model.TrendRoute](docs/TrendRoute.md)
  - [Model.TrendTabluarRoute](docs/TrendTabluarRoute.md)

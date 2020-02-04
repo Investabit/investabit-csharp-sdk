@@ -92,6 +92,25 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of PublicPriceHistoryResponse</returns>
         ApiResponse<PublicPriceHistoryResponse> V1PublicPriceHistorySymbolPeriodIntervalGetWithHttpInfo (string symbol, string period, string interval);
         /// <summary>
+        /// Summary
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>PublicSummaryResponse</returns>
+        PublicSummaryResponse V1PublicSummaryGet ();
+
+        /// <summary>
+        /// Summary
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of PublicSummaryResponse</returns>
+        ApiResponse<PublicSummaryResponse> V1PublicSummaryGetWithHttpInfo ();
+        /// <summary>
         /// Symbols
         /// </summary>
         /// <remarks>
@@ -200,6 +219,25 @@ namespace IO.Swagger.Api
         /// <param name="interval">The bar interval, such as 1 day.</param>
         /// <returns>Task of ApiResponse (PublicPriceHistoryResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PublicPriceHistoryResponse>> V1PublicPriceHistorySymbolPeriodIntervalGetAsyncWithHttpInfo (string symbol, string period, string interval);
+        /// <summary>
+        /// Summary
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of PublicSummaryResponse</returns>
+        System.Threading.Tasks.Task<PublicSummaryResponse> V1PublicSummaryGetAsync ();
+
+        /// <summary>
+        /// Summary
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (PublicSummaryResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PublicSummaryResponse>> V1PublicSummaryGetAsyncWithHttpInfo ();
         /// <summary>
         /// Symbols
         /// </summary>
@@ -761,6 +799,127 @@ namespace IO.Swagger.Api
             return new ApiResponse<PublicPriceHistoryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (PublicPriceHistoryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicPriceHistoryResponse)));
+        }
+
+        /// <summary>
+        /// Summary 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>PublicSummaryResponse</returns>
+        public PublicSummaryResponse V1PublicSummaryGet ()
+        {
+             ApiResponse<PublicSummaryResponse> localVarResponse = V1PublicSummaryGetWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Summary 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of PublicSummaryResponse</returns>
+        public ApiResponse< PublicSummaryResponse > V1PublicSummaryGetWithHttpInfo ()
+        {
+
+            var localVarPath = "/v1/public/summary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1PublicSummaryGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicSummaryResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicSummaryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicSummaryResponse)));
+        }
+
+        /// <summary>
+        /// Summary 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of PublicSummaryResponse</returns>
+        public async System.Threading.Tasks.Task<PublicSummaryResponse> V1PublicSummaryGetAsync ()
+        {
+             ApiResponse<PublicSummaryResponse> localVarResponse = await V1PublicSummaryGetAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Summary 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (PublicSummaryResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PublicSummaryResponse>> V1PublicSummaryGetAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/v1/public/summary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1PublicSummaryGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicSummaryResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicSummaryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicSummaryResponse)));
         }
 
         /// <summary>

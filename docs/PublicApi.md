@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**V1PublicPriceChangeSymbolGet**](PublicApi.md#v1publicpricechangesymbolget) | **GET** /v1/public/price-change/{symbol} | Price Change
 [**V1PublicPriceCurrentSymbolGet**](PublicApi.md#v1publicpricecurrentsymbolget) | **GET** /v1/public/price-current/{symbol} | Price Current
 [**V1PublicPriceHistorySymbolPeriodIntervalGet**](PublicApi.md#v1publicpricehistorysymbolperiodintervalget) | **GET** /v1/public/price-history/{symbol}/{period}/{interval} | Price History
+[**V1PublicSummaryGet**](PublicApi.md#v1publicsummaryget) | **GET** /v1/public/summary | Summary
 [**V1PublicSymbolsGet**](PublicApi.md#v1publicsymbolsget) | **GET** /v1/public/symbols | Symbols
 [**V1PublicTrendSymbolGet**](PublicApi.md#v1publictrendsymbolget) | **GET** /v1/public/trend/{symbol} | Trend
 
@@ -180,6 +181,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PublicPriceHistoryResponse**](PublicPriceHistoryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="v1publicsummaryget"></a>
+# **V1PublicSummaryGet**
+> PublicSummaryResponse V1PublicSummaryGet ()
+
+Summary
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class V1PublicSummaryGetExample
+    {
+        public void main()
+        {
+            var apiInstance = new PublicApi();
+
+            try
+            {
+                // Summary
+                PublicSummaryResponse result = apiInstance.V1PublicSummaryGet();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PublicApi.V1PublicSummaryGet: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PublicSummaryResponse**](PublicSummaryResponse.md)
 
 ### Authorization
 

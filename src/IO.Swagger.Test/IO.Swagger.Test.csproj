@@ -81,7 +81,7 @@ The CryptoWeather API allows for access to all of the cryptocurrency data and ma
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\IO.Swagger\IO.Swagger.csproj">
-          <Project>{7401F54F-9D6B-46DC-AC79-D19462BB9DEB}</Project>
+          <Project>{4BA15875-1415-4DAB-A8AC-6844E73176BD}</Project>
           <Name>IO.Swagger</Name>
       </ProjectReference>
   </ItemGroup>
