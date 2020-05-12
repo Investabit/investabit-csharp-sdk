@@ -12,7 +12,7 @@ The CryptoWeather API allows for access to all of the cryptocurrency data and ma
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4BA15875-1415-4DAB-A8AC-6844E73176BD}</ProjectGuid>
+    <ProjectGuid>{FA0BEC01-7E0D-4133-BE6F-06E1E3D07AFF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IO.Swagger</RootNamespace>

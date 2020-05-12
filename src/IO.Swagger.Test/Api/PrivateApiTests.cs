@@ -96,6 +96,22 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test V1PrivateForecastTimeSymbolIntervalPeriodGet
+        /// </summary>
+        [Test]
+        public void V1PrivateForecastTimeSymbolIntervalPeriodGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string symbol = null;
+            //string interval = null;
+            //string period = null;
+            //string cookie = null;
+            //string xCsrf = null;
+            //var response = instance.V1PrivateForecastTimeSymbolIntervalPeriodGet(symbol, interval, period, cookie, xCsrf);
+            //Assert.IsInstanceOf<PrivateForecastTimeResponse> (response, "response is PrivateForecastTimeResponse");
+        }
+        
+        /// <summary>
         /// Test V1PrivateTrendSymbolGet
         /// </summary>
         [Test]

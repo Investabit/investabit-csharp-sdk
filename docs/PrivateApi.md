@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**V1PrivateAccuracySymbolIntervalPeriodGet**](PrivateApi.md#v1privateaccuracysymbolintervalperiodget) | **GET** /v1/private/accuracy/{symbol}/{interval}/{period} | Accuracy
 [**V1PrivateForecastSymbolIntervalGet**](PrivateApi.md#v1privateforecastsymbolintervalget) | **GET** /v1/private/forecast/{symbol}/{interval} | Forecast
+[**V1PrivateForecastTimeSymbolIntervalPeriodGet**](PrivateApi.md#v1privateforecasttimesymbolintervalperiodget) | **GET** /v1/private/forecast-time/{symbol}/{interval}/{period} | Forecast Time
 [**V1PrivateTrendSymbolGet**](PrivateApi.md#v1privatetrendsymbolget) | **GET** /v1/private/trend/{symbol} | Trend
 [**V1PrivateTrendTabularGet**](PrivateApi.md#v1privatetrendtabularget) | **GET** /v1/private/trend-tabular | Trend Tabular
 
@@ -140,6 +141,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrivateForecastResponse**](PrivateForecastResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="v1privateforecasttimesymbolintervalperiodget"></a>
+# **V1PrivateForecastTimeSymbolIntervalPeriodGet**
+> PrivateForecastTimeResponse V1PrivateForecastTimeSymbolIntervalPeriodGet (string symbol, string interval, string period, string cookie = null, string xCsrf = null)
+
+Forecast Time
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class V1PrivateForecastTimeSymbolIntervalPeriodGetExample
+    {
+        public void main()
+        {
+            // Configure OAuth2 access token for authorization: oauth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new PrivateApi();
+            var symbol = btc;  // string | The cryptocurrency symbol.
+            var interval = 1h;  // string | The forecast interval, 1h or 1d.
+            var period = 7d;  // string | The period for computing the error bounds, typically 7d or 30d.
+            var cookie = csrf=b1820141-1bad-4a9c-93c0-52022817ce89;  // string | e.g. csrf=b1820141-1bad-4a9c-93c0-52022817ce89 (optional) 
+            var xCsrf = b1820141-1bad-4a9c-93c0-52022817ce89;  // string | e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional) 
+
+            try
+            {
+                // Forecast Time
+                PrivateForecastTimeResponse result = apiInstance.V1PrivateForecastTimeSymbolIntervalPeriodGet(symbol, interval, period, cookie, xCsrf);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PrivateApi.V1PrivateForecastTimeSymbolIntervalPeriodGet: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **string**| The cryptocurrency symbol. | 
+ **interval** | **string**| The forecast interval, 1h or 1d. | 
+ **period** | **string**| The period for computing the error bounds, typically 7d or 30d. | 
+ **cookie** | **string**| e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 | [optional] 
+ **xCsrf** | **string**| e.g. b1820141-1bad-4a9c-93c0-52022817ce89 | [optional] 
+
+### Return type
+
+[**PrivateForecastTimeResponse**](PrivateForecastTimeResponse.md)
 
 ### Authorization
 
