@@ -104,6 +104,7 @@ All URIs are relative to *https://api.cryptoweather.ai*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *PrivateApi* | [**V1PrivateAccuracySymbolIntervalPeriodGet**](docs/PrivateApi.md#v1privateaccuracysymbolintervalperiodget) | **GET** /v1/private/accuracy/{symbol}/{interval}/{period} | Accuracy
+*PrivateApi* | [**V1PrivateForecastAccuracySymbolIntervalPeriodGet**](docs/PrivateApi.md#v1privateforecastaccuracysymbolintervalperiodget) | **GET** /v1/private/forecast-accuracy/{symbol}/{interval}/{period} | Forecast Accuracy
 *PrivateApi* | [**V1PrivateForecastSymbolIntervalGet**](docs/PrivateApi.md#v1privateforecastsymbolintervalget) | **GET** /v1/private/forecast/{symbol}/{interval} | Forecast
 *PrivateApi* | [**V1PrivateForecastTimeSymbolIntervalPeriodGet**](docs/PrivateApi.md#v1privateforecasttimesymbolintervalperiodget) | **GET** /v1/private/forecast-time/{symbol}/{interval}/{period} | Forecast Time
 *PrivateApi* | [**V1PrivateTrendSymbolGet**](docs/PrivateApi.md#v1privatetrendsymbolget) | **GET** /v1/private/trend/{symbol} | Trend
@@ -121,6 +122,7 @@ Class | Method | HTTP request | Description
 
  - [Model.AccuracyRoute](docs/AccuracyRoute.md)
  - [Model.DefaultResponse](docs/DefaultResponse.md)
+ - [Model.ForecastAccuracyRoute](docs/ForecastAccuracyRoute.md)
  - [Model.ForecastRoute](docs/ForecastRoute.md)
  - [Model.ForecastTimeRoute](docs/ForecastTimeRoute.md)
  - [Model.PriceChangeRoute](docs/PriceChangeRoute.md)
@@ -128,6 +130,8 @@ Class | Method | HTTP request | Description
  - [Model.PriceHistoryRoute](docs/PriceHistoryRoute.md)
  - [Model.PrivateAccuracyResponse](docs/PrivateAccuracyResponse.md)
  - [Model.PrivateAccuracyResponseData](docs/PrivateAccuracyResponseData.md)
+ - [Model.PrivateForecastAccuracyResponse](docs/PrivateForecastAccuracyResponse.md)
+ - [Model.PrivateForecastAccuracyResponseData](docs/PrivateForecastAccuracyResponseData.md)
  - [Model.PrivateForecastResponse](docs/PrivateForecastResponse.md)
  - [Model.PrivateForecastResponseData](docs/PrivateForecastResponseData.md)
  - [Model.PrivateForecastResponseDataForecast](docs/PrivateForecastResponseDataForecast.md)

@@ -54,6 +54,35 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of PrivateAccuracyResponse</returns>
         ApiResponse<PrivateAccuracyResponse> V1PrivateAccuracySymbolIntervalPeriodGetWithHttpInfo (string symbol, string interval, string period, string cookie = null, string xCsrf = null);
         /// <summary>
+        /// Forecast Accuracy
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol.</param>
+        /// <param name="interval">The forecast interval, 1h or 1d.</param>
+        /// <param name="period">The period for computing the error bounds, typically 7d or 30d.</param>
+        /// <param name="cookie">e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <returns>PrivateForecastAccuracyResponse</returns>
+        PrivateForecastAccuracyResponse V1PrivateForecastAccuracySymbolIntervalPeriodGet (string symbol, string interval, string period, string cookie = null, string xCsrf = null);
+
+        /// <summary>
+        /// Forecast Accuracy
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol.</param>
+        /// <param name="interval">The forecast interval, 1h or 1d.</param>
+        /// <param name="period">The period for computing the error bounds, typically 7d or 30d.</param>
+        /// <param name="cookie">e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <returns>ApiResponse of PrivateForecastAccuracyResponse</returns>
+        ApiResponse<PrivateForecastAccuracyResponse> V1PrivateForecastAccuracySymbolIntervalPeriodGetWithHttpInfo (string symbol, string interval, string period, string cookie = null, string xCsrf = null);
+        /// <summary>
         /// Forecast
         /// </summary>
         /// <remarks>
@@ -188,6 +217,35 @@ namespace IO.Swagger.Api
         /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
         /// <returns>Task of ApiResponse (PrivateAccuracyResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PrivateAccuracyResponse>> V1PrivateAccuracySymbolIntervalPeriodGetAsyncWithHttpInfo (string symbol, string interval, string period, string cookie = null, string xCsrf = null);
+        /// <summary>
+        /// Forecast Accuracy
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol.</param>
+        /// <param name="interval">The forecast interval, 1h or 1d.</param>
+        /// <param name="period">The period for computing the error bounds, typically 7d or 30d.</param>
+        /// <param name="cookie">e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <returns>Task of PrivateForecastAccuracyResponse</returns>
+        System.Threading.Tasks.Task<PrivateForecastAccuracyResponse> V1PrivateForecastAccuracySymbolIntervalPeriodGetAsync (string symbol, string interval, string period, string cookie = null, string xCsrf = null);
+
+        /// <summary>
+        /// Forecast Accuracy
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol.</param>
+        /// <param name="interval">The forecast interval, 1h or 1d.</param>
+        /// <param name="period">The period for computing the error bounds, typically 7d or 30d.</param>
+        /// <param name="cookie">e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <returns>Task of ApiResponse (PrivateForecastAccuracyResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PrivateForecastAccuracyResponse>> V1PrivateForecastAccuracySymbolIntervalPeriodGetAsyncWithHttpInfo (string symbol, string interval, string period, string cookie = null, string xCsrf = null);
         /// <summary>
         /// Forecast
         /// </summary>
@@ -571,6 +629,187 @@ namespace IO.Swagger.Api
             return new ApiResponse<PrivateAccuracyResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (PrivateAccuracyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PrivateAccuracyResponse)));
+        }
+
+        /// <summary>
+        /// Forecast Accuracy 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol.</param>
+        /// <param name="interval">The forecast interval, 1h or 1d.</param>
+        /// <param name="period">The period for computing the error bounds, typically 7d or 30d.</param>
+        /// <param name="cookie">e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <returns>PrivateForecastAccuracyResponse</returns>
+        public PrivateForecastAccuracyResponse V1PrivateForecastAccuracySymbolIntervalPeriodGet (string symbol, string interval, string period, string cookie = null, string xCsrf = null)
+        {
+             ApiResponse<PrivateForecastAccuracyResponse> localVarResponse = V1PrivateForecastAccuracySymbolIntervalPeriodGetWithHttpInfo(symbol, interval, period, cookie, xCsrf);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Forecast Accuracy 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol.</param>
+        /// <param name="interval">The forecast interval, 1h or 1d.</param>
+        /// <param name="period">The period for computing the error bounds, typically 7d or 30d.</param>
+        /// <param name="cookie">e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <returns>ApiResponse of PrivateForecastAccuracyResponse</returns>
+        public ApiResponse< PrivateForecastAccuracyResponse > V1PrivateForecastAccuracySymbolIntervalPeriodGetWithHttpInfo (string symbol, string interval, string period, string cookie = null, string xCsrf = null)
+        {
+            // verify the required parameter 'symbol' is set
+            if (symbol == null)
+                throw new ApiException(400, "Missing required parameter 'symbol' when calling PrivateApi->V1PrivateForecastAccuracySymbolIntervalPeriodGet");
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new ApiException(400, "Missing required parameter 'interval' when calling PrivateApi->V1PrivateForecastAccuracySymbolIntervalPeriodGet");
+            // verify the required parameter 'period' is set
+            if (period == null)
+                throw new ApiException(400, "Missing required parameter 'period' when calling PrivateApi->V1PrivateForecastAccuracySymbolIntervalPeriodGet");
+
+            var localVarPath = "/v1/private/forecast-accuracy/{symbol}/{interval}/{period}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (symbol != null) localVarPathParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // path parameter
+            if (interval != null) localVarPathParams.Add("interval", this.Configuration.ApiClient.ParameterToString(interval)); // path parameter
+            if (period != null) localVarPathParams.Add("period", this.Configuration.ApiClient.ParameterToString(period)); // path parameter
+            if (cookie != null) localVarHeaderParams.Add("Cookie", this.Configuration.ApiClient.ParameterToString(cookie)); // header parameter
+            if (xCsrf != null) localVarHeaderParams.Add("X-csrf", this.Configuration.ApiClient.ParameterToString(xCsrf)); // header parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1PrivateForecastAccuracySymbolIntervalPeriodGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PrivateForecastAccuracyResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PrivateForecastAccuracyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PrivateForecastAccuracyResponse)));
+        }
+
+        /// <summary>
+        /// Forecast Accuracy 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol.</param>
+        /// <param name="interval">The forecast interval, 1h or 1d.</param>
+        /// <param name="period">The period for computing the error bounds, typically 7d or 30d.</param>
+        /// <param name="cookie">e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <returns>Task of PrivateForecastAccuracyResponse</returns>
+        public async System.Threading.Tasks.Task<PrivateForecastAccuracyResponse> V1PrivateForecastAccuracySymbolIntervalPeriodGetAsync (string symbol, string interval, string period, string cookie = null, string xCsrf = null)
+        {
+             ApiResponse<PrivateForecastAccuracyResponse> localVarResponse = await V1PrivateForecastAccuracySymbolIntervalPeriodGetAsyncWithHttpInfo(symbol, interval, period, cookie, xCsrf);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Forecast Accuracy 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">The cryptocurrency symbol.</param>
+        /// <param name="interval">The forecast interval, 1h or 1d.</param>
+        /// <param name="period">The period for computing the error bounds, typically 7d or 30d.</param>
+        /// <param name="cookie">e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <param name="xCsrf">e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)</param>
+        /// <returns>Task of ApiResponse (PrivateForecastAccuracyResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PrivateForecastAccuracyResponse>> V1PrivateForecastAccuracySymbolIntervalPeriodGetAsyncWithHttpInfo (string symbol, string interval, string period, string cookie = null, string xCsrf = null)
+        {
+            // verify the required parameter 'symbol' is set
+            if (symbol == null)
+                throw new ApiException(400, "Missing required parameter 'symbol' when calling PrivateApi->V1PrivateForecastAccuracySymbolIntervalPeriodGet");
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new ApiException(400, "Missing required parameter 'interval' when calling PrivateApi->V1PrivateForecastAccuracySymbolIntervalPeriodGet");
+            // verify the required parameter 'period' is set
+            if (period == null)
+                throw new ApiException(400, "Missing required parameter 'period' when calling PrivateApi->V1PrivateForecastAccuracySymbolIntervalPeriodGet");
+
+            var localVarPath = "/v1/private/forecast-accuracy/{symbol}/{interval}/{period}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (symbol != null) localVarPathParams.Add("symbol", this.Configuration.ApiClient.ParameterToString(symbol)); // path parameter
+            if (interval != null) localVarPathParams.Add("interval", this.Configuration.ApiClient.ParameterToString(interval)); // path parameter
+            if (period != null) localVarPathParams.Add("period", this.Configuration.ApiClient.ParameterToString(period)); // path parameter
+            if (cookie != null) localVarHeaderParams.Add("Cookie", this.Configuration.ApiClient.ParameterToString(cookie)); // header parameter
+            if (xCsrf != null) localVarHeaderParams.Add("X-csrf", this.Configuration.ApiClient.ParameterToString(xCsrf)); // header parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1PrivateForecastAccuracySymbolIntervalPeriodGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PrivateForecastAccuracyResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PrivateForecastAccuracyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PrivateForecastAccuracyResponse)));
         }
 
         /// <summary>
